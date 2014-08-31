@@ -1,58 +1,51 @@
 from django.db import models
+from django.contrib.auth.models import User
 
-# Create your models here.
+from taggit.managers import TaggableManager
 
-class Post():
-	title = models.CharField(max_length=100)
-	author = models.ForeignKey(User)
-	slug = models.SlugField(max_length=100)
-	description = models.TextField(help_text=("meta tag and previews"))
-    content = models.TextField()
+"""
+class PublishedManager(models.Manager):
+    #return published only
+    #return recently published
 
+class PostViewManager(models.Manager):
+    #return most viewed posts
+"""
+class Category(models.Model):
+    name = models.CharField(max_length=32, primary_key=True)
 
-	main_image = models.URLField(help_text=("Image for post banner, size TBD"), null=True, blank=True)
+    def __unicode__(self):
+        return self.name
 
-
-	og_image = models.URLField(help_text=("Image for Facebook OpenGraph; Min 200x200"), null=True, blank=True)
-	
-	#add in google authorship rich snippets tag
-
-
-	class Meta:
-		ordering = 
-
-class Category():
-
-class User(): #django apparently has built in user model...
-
-
-class Post(TimeStampedModel):
-
-    STATUS_DRAFT = "draft"
-    STATUS_PUBLISHED = "published"
+class Post(models.Model):
+    title = models.CharField(max_length=128, blank=False)
+    category = models.ForeignKey(Category, blank=True)
+    author = models.ForeignKey(User, blank=True)
+    slug = models.SlugField(max_length=128, blank=False)
+    description = models.CharField(max_length=180, help_text="meta tag and previews") 
+    content = models.TextField(blank=True)
+    
+    STATUS_DRAFT = 'draft'
+    STATUS_PUBLISHED = 'published'
     STATUS_CHOICES = (
-        (STATUS_DRAFT, _(STATUS_DRAFT)),
-        (STATUS_PUBLISHED, _(STATUS_PUBLISHED)),
+        (STATUS_DRAFT, 'Draft'),
+        (STATUS_PUBLISHED, 'Published'),
     )
 
-    objects = PostManager()
-    tags = TaggableManager()
-
-    title = models.CharField(_("Title"), max_length=100)
-    slug = models.SlugField(_("Slug"), max_length=100)
-    keywords = models.TextField(_("META Keywords"))
-    description = models.TextField(_("Short description"), help_text=_("For headers/rss and quick page info feed"))
-    status = models.CharField(_("Status"), max_length=20, choices=STATUS_CHOICES)
-    lead_image = models.URLField(_("Lead image URL"), help_text=_("Point at a lead image which will be featured in Facebook OpenGraph."), null=True, blank=True)
-    body = models.TextField()
+    status = models.CharField(max_length=128, choices=STATUS_CHOICES)
     pub_date = models.DateField()
+    main_image = models.URLField(help_text="Image for post banner, size TBD", blank=True, max_length=128)
+    og_image = models.URLField(help_text="Image for Facebook OpenGraph; Min 200x200", blank=True, max_length=128)
+    views = models.IntegerField(default=0) 
+    #http://stackoverflow.com/questions/1603340/track-the-number-of-page-views-or-hits-of-an-object
+
+    objects = models.Manager()
+
+    #custom manager for blog posts
+    #published_post = PublishedManager() 
+    #viewed_post = PostViewManager()
+    tags = TaggableManager()
 
     def __unicode__(self):
         return self.title
-        
-    def get_absolute_url(self):
-        return reverse('post_detail', kwargs={'slug': self.slug})
 
-    class Meta:
-        ordering = ['-pub_date', ]
-        get_latest_by = 'pub_date'
