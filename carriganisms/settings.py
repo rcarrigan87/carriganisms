@@ -10,6 +10,8 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from os.path import join
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 #Set site ID for flatpages
@@ -44,7 +46,7 @@ DEFUALT_APPS = (
 THIRD_PARTY_APPS = (
     'taggit',
 )
-
+#when installing south uncomment taggit path set
 LOCAL_APPS = (
     'blogengine',
 )
@@ -98,3 +100,11 @@ STATIC_URL = '/static/'
 #SOUTH_MIGRATION_MODULES = {
 #    'taggit': 'taggit.south_migrations',
 #}
+
+TEMPLATE_DIRS = (
+    join(BASE_DIR, 'templates'),
+)
+
+STATICFILES_DIRS = (
+    join(BASE_DIR, 'static'),
+)

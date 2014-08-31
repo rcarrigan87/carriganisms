@@ -1,5 +1,9 @@
-from django.shortcuts import render
+from django.template import RequestContext
+from django.shortcuts import render_to_response
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse("Rango says hello world!")
+
+	context = RequestContext(request)
+
+	return render_to_response('blogengine/blog_homepage.html', context)
