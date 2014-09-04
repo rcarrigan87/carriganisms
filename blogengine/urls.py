@@ -8,6 +8,12 @@ urlpatterns = patterns('',
         	regex=r'^$', 
         	view=views.index, 
         	name='index'
+        ),
+
+        url(
+        	regex=r'^(?P<slug>[\-\_\w]+)/$',
+        	view=views.post_detail,
+        	name='post_detail',
         )
 
 )
