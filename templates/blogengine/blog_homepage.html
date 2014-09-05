@@ -2,7 +2,7 @@
 
 {% block title %}Balanced Delusion and Other Thoughts{% endblock %}
 
-{% block description %}Attempting to provide something useful{% endblock %}
+{% block description %}The Blog of Ryan Carrigan: sales rep turned digital marketer with a little bit of developer{% endblock %}
 
 {% block extracss %}
     <!-- Custom CSS -->
@@ -32,12 +32,18 @@
                 {% endfor %}
                 <!-- Pager -->
                 <ul class="pager">
+
+                    {% if posts.has_previous %}
                     <li class="previous">
-                        <a href="#">&larr; Older</a>
+                        <a href="?page={{ posts.previous_page_number }}">&larr; Older</a>
                     </li>
+                    {% endif %}
+
+                    {% if posts.has_next %}
                     <li class="next">
-                        <a href="#">Newer &rarr;</a>
+                        <a href="?page={{ posts.next_page_number }}">Newer &rarr;</a>
                     </li>
+                    {% endif %}
                 </ul>
             </div>
 
