@@ -11,9 +11,15 @@ urlpatterns = patterns('',
         ),
 
         url(
-        	regex=r'^(?P<slug>[\-\_\w]+)/$',
+        	regex=r'^post/(?P<slug>[\-\_\w]+)/$',
         	view=views.post_detail,
         	name='post_detail',
+        ),
+
+        url(
+                regex=r'^category/(?P<slug>[\-\_\w]+)/$',
+                view=views.category_detail,
+                name='category_detail',
         )
 
 )

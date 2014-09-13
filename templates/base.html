@@ -26,6 +26,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    {% block relcanonical %}{% endblock %}
     <!-- OG and Twitter Card -->
     <meta property="twitter:card" content="summary" />
     <meta property="twitter:site" content="@carriganisms" />
@@ -50,19 +51,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/blog/">Carriganisms</a>
+                <a class="navbar-brand" href="/">Carriganisms</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Services</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
+                        <a href="/about/">About</a>
                     </li>
                 </ul>
             </div>
@@ -85,7 +80,7 @@
             <!-- Blog Sidebar Widgets Column -->
             <div class="col-md-4">
 
-                <!-- Blog Search Well -->
+                <!-- Blog Search Well
                 <div class="well">
                     <h4>Blog Search</h4>
                     <div class="input-group">
@@ -96,48 +91,54 @@
                         </button>
                         </span>
                     </div>
-                    <!-- /.input-group -->
                 </div>
+                End Blog Search Well -->
 
-                <!-- Blog Categories Well -->
+                <!-- Side Widget Well -->
+                {% if popular_posts %}
                 <div class="well">
-                    <h4>Blog Categories</h4>
+                    <h4>Popular Posts</h4>
+                    {% for page in popular_posts %}
+                        <ul class="list-unstyled">
+                            <a href="{% url 'blogengine:post_detail' slug=page.slug %}">{{page.title}}</a>
+                        </ul>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                <!-- Blog Categories Well -->
+                {% if cat_list1 %}
+                <div class="well">
+                    <h4>Categories</h4>
                     <div class="row">
                         <div class="col-lg-6">
                             <ul class="list-unstyled">
-                                <li><a href="#">Category Name</a>
+                                {% for category in cat_list1 %}
+                                <li><a href="{% url 'blogengine:category_detail' slug=category.cat_slug %}">{{category.name}}</a>
                                 </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
+                                {% endfor %}
+        
                             </ul>
                         </div>
                         <!-- /.col-lg-6 -->
                         <div class="col-lg-6">
                             <ul class="list-unstyled">
-                                <li><a href="#">Category Name</a>
+                                {% for category in cat_list2 %}
+                                <li><a href="{% url 'blogengine:category_detail' slug=category.cat_slug %}">{{category.name}}</a>
                                 </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
+                                {% endfor %}
                             </ul>
                         </div>
                         <!-- /.col-lg-6 -->
                     </div>
                     <!-- /.row -->
                 </div>
-
-                <!-- Side Widget Well -->
+                {% endif %}
+                <!-- Side Widget Well
                 <div class="well">
                     <h4>Side Widget Well</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
                 </div>
+                End Widget Well -->
 
             </div>
             {% endblock %}
@@ -150,7 +151,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>Copyright&copy; Ryan Carrigan 2014</p>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -167,6 +168,6 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
     {% endblock %}
-</body>
 
+</body>
 </html>

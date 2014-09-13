@@ -9,6 +9,11 @@
     <link href="{{ STATIC_URL }}css/blog-post.css" rel="stylesheet">
 {% endblock %}
 
+{% block ogslug %}posts/{{Post.slug}}{% endblock %}
+{% block ogtitle %} {{Post.title}} {% endblock %}
+{% block ogdescription %} {{Post.description}} {% endblock %}
+{% block ogimage %} {{Post.og_image}} {% endblock %}
+
 {% block content %}
             <!-- Blog Post Content Column -->
             <div class="col-lg-8">
@@ -71,6 +76,7 @@
                 </div>
 
                 <!-- Comment -->
+                <!-- https://help.disqus.com/customer/portal/articles/472097-universal-embed-code -->
                 <div class="media">
                     <a class="pull-left" href="#">
                         <img class="media-object" src="http://placehold.it/64x64" alt="">

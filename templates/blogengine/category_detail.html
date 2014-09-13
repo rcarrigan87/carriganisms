@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
-{% block title %}Thoughts and Delusions of Ryan Carrigan{% endblock %}
+{% block title %}Post in the {{cat_detail.name}} Category{% endblock %}
 
-{% block description %}The Blog of Ryan Carrigan: sales rep turned digital marketer with a little bit of developer{% endblock %}
+{% block description %}A list of articles relating to the {{cat_detail.name}} category{% endblock %}
 
 {% block extracss %}
     <!-- Custom CSS -->
@@ -10,8 +10,8 @@
 {% endblock %}
 
 <!-- Open graph tags -->
-{% block ogtitle %}Thoughts and Delusions of Ryan Carrigan{% endblock %}
-{% block ogdescription %}The Blog of Ryan Carrigan: sales rep turned digital marketer with a little bit of developer{% endblock %}
+{% block ogtitle %}Post in the {{cat_detail.name}} Category{% endblock %}
+{% block ogdescription %}A list of articles relating to the {{cat_detail.name}} category{% endblock %}
 {% block ogimage %}{% endblock %}
 <!-- End open graph tags -->
 
