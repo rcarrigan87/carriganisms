@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-from taggit.managers import TaggableManager
 
 """
 class PublishedManager(models.Manager):
@@ -48,7 +47,6 @@ class Post(models.Model):
     #custom manager for blog posts
     #published_post = PublishedManager() 
     #viewed_post = PostViewManager()
-    tags = TaggableManager()
 
     def __unicode__(self):
         return self.title

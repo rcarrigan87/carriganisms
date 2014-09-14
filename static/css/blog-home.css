@@ -10,4 +10,11 @@ body {
 
 footer {
     margin: 50px 0;
+    text-align: center;
+}
+
+.page-header {
+
+margin: 0px 0 20px;
+
 }

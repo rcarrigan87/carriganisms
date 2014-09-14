@@ -6,14 +6,59 @@
 
 {% block extracss %}
     <!-- Custom CSS -->
-    <link href="{{ STATIC_URL }}css/blog-home.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}css/blog-about.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 {% endblock %}
 
-
+{% block ogslug %}about/{% endblock %}
+{% block ogtitle %} About Me {% endblock %}
+{% block ogdescription %}The Blog of Ryan Carrigan: sales rep turned digital marketer with a little bit of developer{% endblock %}
+{% block ogimage %} {% endblock %}
 
 {% block content %}
 
-<h1 class="page-header">Ryan Carrigan</h1>
+<div class="container">
+	<div class="row">
+		<div class="col-md-5">
+			<div>
+				<img class="personal-img" src="{{ STATIC_URL }}img/Ryan-Carrigan.jpg" alt="Ryan Carrigan">
+			</div>
+		</div>
+		<div class="col-md-7">
+			<div class="personal-desc">
+				<h2 class="page-header">Carriganisms</h2>
+				<h3><i class="fa fa-quote-left fa-2x pull-left fa-border"></i> My thoughts on internet marketing, start-ups, web development and whatever else comes to mind.</h3>
+			</div>
+			<div class="personal-desc">
+				<h2 class="page-header">I'm...</h2>
+				<ul class="personal-list fa-ul">
+					<li><i class="fa-li fa fa-code"></i></i> a web marketer by day</li>
+					<li><i class="fa-li fa fa-sitemap"></i> working on multiple side-projects by night</li>
+					<li><i class="fa-li fa fa-futbol-o"></i> a huge <a href="http://www.evertonfc.com/" target="_blank">Everton FC</a>  fan</li>
+					<li><i class="fa-li fa fa-male"></i>  born and raised in Haddonfield, NJ</li>
+				</ul>
+			</div>
+		</div>
+	</div> <!-- close row -->
+	<div class="row">
+		<div class="col-md-12 personal-contact">
+			<hr>
+			<div class="col-md-4">
+				<a href="https://twitter.com/carriganisms" target="_blank"><h1><i class="fa fa-twitter-square fa-3x"></i></h1></a>
+			</div>
+			<div class="col-md-4">
+				<a href="https://github.com/rcarrigan87" target="_blank"><h1><i class="fa fa-github-square fa-3x"></i></h1></a>
+			</div>
+			<div class="col-md-4">
+				<a href="mailto:&#082;&#099;&#097;&#114;&#114;&#105;&#103;&#097;&#110;&#056;&#055;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;" target="_blank"><h1><i class="fa fa-envelope fa-3x"></i></h1></a>
+			</div>
+		</div> <!-- close col -->
+	</div> <!-- close row -->
+
+
+
+</div> <!-- close container -->
+
 {% endblock %}
 
 {% block sidebar %}

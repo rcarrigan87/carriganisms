@@ -44,7 +44,6 @@ DEFUALT_APPS = (
 )
 
 THIRD_PARTY_APPS = (
-    'taggit',
 )
 #when installing south uncomment taggit path set
 LOCAL_APPS = (
@@ -95,11 +94,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
-
-##taggit default uses django migrations so set migrations to south
-#SOUTH_MIGRATION_MODULES = {
-#    'taggit': 'taggit.south_migrations',
-#}
 
 TEMPLATE_DIRS = (
     join(BASE_DIR, 'templates'),
