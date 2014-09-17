@@ -1,1 +1,1 @@
-web: newrelic-admin run-program gunicorn rahapps.wsgi
+web:gunicorn rahapps.wsgi
