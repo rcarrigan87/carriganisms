@@ -12,11 +12,10 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 from os.path import join
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 
 #Set site ID for flatpages
 SITE_ID = 1
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -24,12 +23,6 @@ SITE_ID = 1
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'k&8_311)87y*@4j*1a+&c=d105woh8a+)=hw$aik@vurara=0%'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-TEMPLATE_DEBUG = True
-
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -65,17 +58,6 @@ ROOT_URLCONF = 'carriganisms.urls'
 
 WSGI_APPLICATION = 'carriganisms.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/1.6/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
@@ -90,15 +72,6 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.6/howto/static-files/
-
-STATIC_URL = '/static/'
-
 TEMPLATE_DIRS = (
     join(BASE_DIR, 'templates'),
-)
-
-STATICFILES_DIRS = (
-    join(BASE_DIR, 'static'),
 )
