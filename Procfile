@@ -1,1 +1,1 @@
-web:gunicorn rahapps.wsgi
+web: gunicorn rahapps.wsgi
