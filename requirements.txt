@@ -1,2 +1,1 @@
 Django==1.6.6
-django-taggit==0.12.1

@@ -19,7 +19,7 @@ class Category(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=128, blank=False)
-    category = models.ForeignKey(Category, blank=True)
+    category = models.ManyToManyField(Category, blank=True)
     author = models.ForeignKey(User, blank=True)
     slug = models.SlugField(max_length=128, blank=False)
     description = models.CharField(max_length=180, help_text="meta tag and previews") 

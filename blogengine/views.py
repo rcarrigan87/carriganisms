@@ -34,7 +34,7 @@ def index(request):
 
 	cat_list = Category.objects.all()[:8]
 	cat_list1 = cat_list[:4]
-	cat_list2 = cat_list[5:]
+	cat_list2 = cat_list[4:]
 	context_dict['cat_list1'] = cat_list1
 	context_dict['cat_list2'] = cat_list2
 	### end side bar items ###

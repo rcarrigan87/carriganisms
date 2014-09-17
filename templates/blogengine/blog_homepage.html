@@ -18,17 +18,17 @@
 {% block content %}
             <div class="col-md-8">
                 <h2 class="page-header">
-                    <small>"The only man who never makes a mistake is the man who never does anything." -TR</small>
+                    <small>"It is far more profitable to sell advice than to take it" - Forbes Sr.</small>
                 </h2>
 
                 {% for post in posts %}
                 <h2><a href="{% url 'blogengine:post_detail' slug=post.slug %}">{{post.title}}</a></h2>
-                <p class="lead">by {{post.author}}</p>
+                <p class="lead">by {{post.author.first_name}} {{post.author.last_name}}</p>
                 <p><span class="glyphicon glyphicon-time"></span> Posted on {{post.pub_date}}</p>
                 <hr>
                 <img class="img-responsive" src="{{post.main_image}}" alt="">
                 <hr>
-                <p>{{post.content|striptags|truncatewords:30}}</p>
+                <p class="post-paragraphs">{{post.content|striptags|truncatewords:30}}</p>
                 <a class="btn btn-primary" href="{% url 'blogengine:post_detail' slug=post.slug %}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
                 <hr>

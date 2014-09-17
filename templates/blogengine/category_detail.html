@@ -17,10 +17,6 @@
 
 {% block content %}
             <div class="col-md-8">
-                <h1 class="page-header">
-                    <small>"The only man who never makes a mistake is the man who never does anything." -TR</small>
-                </h1>
-
                 {% for post in posts %}
                 <h2><a href="{% url 'blogengine:post_detail' slug=post.slug %}">{{post.title}}</a></h2>
                 <p class="lead">by {{post.author}}</p>

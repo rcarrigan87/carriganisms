@@ -13,8 +13,73 @@ footer {
     text-align: center;
 }
 
+/* Blog Homepage styles */
+
 .page-header {
 
 margin: 0px 0 20px;
+
+}
+
+/* Blog detail styles */
+
+.post-paragraphs {
+
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 20px;
+	line-height: 1.5;
+	color: #333;
+	margin: 0px 0px 25px;
+
+}
+
+.post-headers {
+	margin-top: 30px;
+	margin-bottom: 40px;
+	font-size: 35px;
+}
+
+
+/* About page styles */
+.personal-img {
+
+	margin-top: 90px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.personal-desc {
+
+	margin: 20px 0px 0px 0px;
+	padding: 0px 15px 15px 15px;
+	background-color: #f5f5f5;
+	border: 1px solid #e3e3e3;
+
+}
+
+.personal-list {
+
+	font-size: 25px;
+	line-height: 1.7;
+	list-style-type: none;
+	padding-left: 10px;
+
+}
+
+.personal-contact {
+
+	margin: 0px 0px 0px 0px;
+	padding: 0px 15px 15px 15px;
+	text-align: center;
+
+}
+
+.about-header {
+
+	padding-bottom: 9px;
+	margin: 30px 0 10px;
+	border-bottom: 1px solid #eee;
 
 }

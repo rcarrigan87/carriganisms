@@ -30,7 +30,7 @@
     <!-- OG and Twitter Card -->
     <meta property="twitter:card" content="summary" />
     <meta property="twitter:site" content="@carriganisms" />
-    <meta property="og:url" content="http://carriganisms.com/{% block ogslug %}{% endblock %}" />
+    <meta property="og:url" content="http://carriganisms.com{% block ogslug %}{% endblock %}" />
     <meta property="og:title" content="{% block ogtitle %}{% endblock %}" />
     <meta property="og:description" content="{% block ogdescription %}{% endblock %}" />
     <meta property="og:image" content="{% block ogimage %}{% endblock %}" />
@@ -157,6 +157,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <p>Copyright&copy; Ryan Carrigan 2014</p>
+                    <p>Built with Django 1.6</p>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
