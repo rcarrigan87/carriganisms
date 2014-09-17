@@ -24,3 +24,11 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+########## ADMIN CONFIGURATION
+ADMINS = (
+    ('Ryan', 'Rcarrigan87@gmail.com'),
+)
+
+MANAGERS = ADMINS
+########## END ADMIN CONFIGURATION
