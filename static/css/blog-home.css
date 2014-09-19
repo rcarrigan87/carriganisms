@@ -25,7 +25,7 @@ margin: 0px 0 20px;
 
 .post-paragraphs {
 
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
 	font-size: 20px;
 	line-height: 1.5;
 	color: #333;
@@ -34,9 +34,28 @@ margin: 0px 0 20px;
 }
 
 .post-headers {
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
 	margin-top: 30px;
 	margin-bottom: 40px;
 	font-size: 35px;
+}
+
+.post-images {
+
+}
+
+.post-quotes {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 25px;
+	line-height: 1.5;
+	color: #333;
+	margin: 0px 0px 45px;
+	padding: 15px 15px 15px 15px;
+	background-color: #f5f5f5;
+	border: 1px solid #e3e3e3;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+
 }
 
 
@@ -56,6 +75,8 @@ margin: 0px 0 20px;
 	padding: 0px 15px 15px 15px;
 	background-color: #f5f5f5;
 	border: 1px solid #e3e3e3;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
 
 }
 

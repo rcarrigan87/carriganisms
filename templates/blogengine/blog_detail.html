@@ -7,6 +7,7 @@
 {% block extracss %}
     <!-- Custom CSS -->
     <link href="{{ STATIC_URL }}css/blog-home.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 {% endblock %}
 
 {% block relcanonical %}<link rel=”canonical” href=”http://carriganisms.com{% url 'blogengine:post_detail' slug=Post.slug %}” />{% endblock %}
