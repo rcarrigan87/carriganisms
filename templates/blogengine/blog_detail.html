@@ -10,7 +10,7 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 {% endblock %}
 
-{% block relcanonical %}<link rel=”canonical” href=”http://carriganisms.com{% url 'blogengine:post_detail' slug=Post.slug %}” />{% endblock %}
+{% block relcanonical %}<link rel=”canonical” href=”http://www.carriganisms.com{% url 'blogengine:post_detail' slug=Post.slug %}” />{% endblock %}
 
 {% block ogslug %}{% url 'blogengine:post_detail' slug=Post.slug %}{% endblock %}
 {% block ogtitle %} {{Post.title}} {% endblock %}
