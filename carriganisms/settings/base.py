@@ -37,8 +37,9 @@ DEFUALT_APPS = (
 )
 
 THIRD_PARTY_APPS = (
+    'south',
 )
-#when installing south uncomment taggit path set
+
 LOCAL_APPS = (
     'blogengine',
 )

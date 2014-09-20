@@ -24,6 +24,7 @@ class Post(models.Model):
     slug = models.SlugField(max_length=128, blank=False)
     description = models.CharField(max_length=180, help_text="meta tag and previews") 
     content = models.TextField(blank=True)
+    focus_keyword = models.CharField(max_length=180, help_text="Page Target Keyword", blank=True)
     
     STATUS_DRAFT = 'draft'
     STATUS_PUBLISHED = 'published'
@@ -40,13 +41,11 @@ class Post(models.Model):
     og_image = models.URLField(help_text="Image for Facebook OpenGraph; Min 200x200", blank=True, max_length=128)
     og_image_alt = models.CharField(max_length=50, help_text="Image description tag", blank=True) 
     views = models.IntegerField(default=0) 
-    #http://stackoverflow.com/questions/1603340/track-the-number-of-page-views-or-hits-of-an-object
 
     objects = models.Manager()
 
-    #custom manager for blog posts
-    #published_post = PublishedManager() 
-    #viewed_post = PostViewManager()
+    #def seo_check(self):
+        
 
     def __unicode__(self):
         return self.title
