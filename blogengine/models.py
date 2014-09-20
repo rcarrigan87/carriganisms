@@ -13,6 +13,7 @@ class PostViewManager(models.Manager):
 class Category(models.Model):
     name = models.CharField(max_length=32, primary_key=True)
     cat_slug = models.SlugField(max_length=128, blank=False)
+    description = models.CharField(max_length=180, blank=True, help_text="Further describe this category")
 
     def __unicode__(self):
         return self.name
