@@ -12,6 +12,19 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 from os.path import join
 
+from django.core.exceptions import ImproperlyConfigured
+
+#Helper function for missing env variables
+def get_env_variable(var_name):
+    """Get the environment variable or return exception"""
+
+    try:
+        return os.environ[var_name]
+    except KeyError:
+        error_msg = "Set the %s environment variable" % var_name
+        raise ImproperlyConfigured(error_msg)
+
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 
 #Set site ID for flatpages
@@ -21,9 +34,7 @@ SITE_ID = 1
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'k&8_311)87y*@4j*1a+&c=d105woh8a+)=hw$aik@vurara=0%'
-
-
+SECRET_KEY = get_env_variable("CARRIGANISMS_KEY")
 
 # Application definition
 
