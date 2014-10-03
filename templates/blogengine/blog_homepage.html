@@ -9,6 +9,8 @@
     <link href="{{ STATIC_URL }}css/blog-home.css" rel="stylesheet">
 {% endblock %}
 
+{% block relcanonical %}}<link rel=”canonical” href=”http://www.carriganisms.com” />{% endblock %}
+
 <!-- Open graph tags -->
 {% block ogtitle %}Thoughts and Delusions of Ryan Carrigan{% endblock %}
 {% block ogdescription %}The Blog of Ryan Carrigan: sales rep turned digital marketer with a little bit of developer{% endblock %}
@@ -28,10 +30,10 @@
                 <hr>
                 <img class="img-responsive" src="{{post.main_image}}" alt="">
                 <hr>
-                <p class="post-paragraphs">{{post.content|striptags|truncatewords:30}}</p>
+                <p class="post-paragraphs">{{post.content|striptags|truncatewords:38}}</p>
                 <a class="btn btn-primary" href="{% url 'blogengine:post_detail' slug=post.slug %}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
-                <hr>
+                <hr />
                 {% endfor %}
                 <!-- Pager -->
                 <ul class="pager">

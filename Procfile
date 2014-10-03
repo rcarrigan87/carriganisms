@@ -1,1 +1,1 @@
-web: gunicorn carriganisms.wsgi
+web: newrelic-admin run-program gunicorn carriganisms.wsgi
